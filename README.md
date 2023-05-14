@@ -4,6 +4,10 @@ This is an open-source ChatGPT plugin that provides current deals on PC games. I
 
 This plugin has not been submitted to ChatGPT so it can only be run locally or via the online version through the "Develop your own plugin" feature.
 
+### Screenshot
+
+![Screenshot of Game Deals Genie](https://i.imgur.com/0eaR3Nw.png)
+
 ### To install the online version:
 
 - Go to the ChatGPT plugin store
