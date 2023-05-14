@@ -121,10 +121,12 @@ app.get('/legal', (req, res) => {
 // Route: Serve ai-plugin.json
 //================================================
 app.get('/.well-known/ai-plugin.json', (req, res) => {
+    let host = req.headers['host'];
     fs.readFile('./.well-known/ai-plugin.json', 'utf8', (err, text) => {
         if (err) {
             return res.status(500).send({ message: err });
         }
+        text = text.replace('PLUGIN_HOSTNAME', `http://${host}`);
         res.setHeader('Content-Type', 'application/json');
         res.send(text);
     });
@@ -134,18 +136,20 @@ app.get('/.well-known/ai-plugin.json', (req, res) => {
 // Route: Serve openapi.yaml
 //================================================
 app.get('/openapi.yaml', (req, res) => {
+    let host = req.headers['host'];
     fs.readFile('openapi.yaml', 'utf8', (err, text) => {
         if (err) {
             return res.status(500).send({ message: err });
         }
+        text = text.replace('PLUGIN_HOSTNAME', `http://${host}`);
         res.setHeader('Content-Type', 'text/yaml');
         res.send(text);
     });
 });
 
 //================================================
-// Start the server and listen on port 3000
+// Start the server and listen on port 80
 //================================================
-app.listen(3000, '0.0.0.0', () => {
-    console.log('Server is running on port 3000');
+app.listen(80, '0.0.0.0', () => {
+    console.log('Server is running on port 80');
 });
