@@ -42,6 +42,8 @@ npm start
 9. "Can you find deals for games with the title 'Cyberpunk'?"
 10. "What are the current deals sorted by 'Deal Rating'?"
 
-### Find me on Twitter
+### Find me on Twitter / Buy me a coffee
 
 [@sudo_overflow](https://twitter.com/sudo_overflow)
+
+[Buy me a coffee](https://www.buymeacoffee.com/FiRmVXOZh)
