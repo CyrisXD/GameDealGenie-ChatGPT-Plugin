@@ -65,6 +65,13 @@ function buildDealQueryString(req) {
     return queryString;
 }
 
+//==============================================
+// Route: Redirect root to Github
+//==============================================
+app.get('/', (req, res) => {
+    res.redirect('https://github.com/CyrisXD/GameDealGenie-ChatGPT-Plugin');
+});
+
 
 //==============================================
 // Route: Get all deals
