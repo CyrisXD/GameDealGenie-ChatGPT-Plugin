@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const app = express();
+const fs = require('fs');
 
 const HOST_URL = "https://cheapshark.com";
 
@@ -114,6 +115,32 @@ app.get('/getcurrencyrates', async (req, res) => {
 //================================================
 app.get('/legal', (req, res) => {
     res.sendFile(__dirname + '/public/legal.html');
+});
+
+//================================================
+// Route: Serve ai-plugin.json
+//================================================
+app.get('/.well-known/ai-plugin.json', (req, res) => {
+    fs.readFile('./.well-known/ai-plugin.json', 'utf8', (err, text) => {
+        if (err) {
+            return res.status(500).send({ message: err });
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.send(text);
+    });
+});
+
+//================================================
+// Route: Serve openapi.yaml
+//================================================
+app.get('/openapi.yaml', (req, res) => {
+    fs.readFile('openapi.yaml', 'utf8', (err, text) => {
+        if (err) {
+            return res.status(500).send({ message: err });
+        }
+        res.setHeader('Content-Type', 'text/yaml');
+        res.send(text);
+    });
 });
 
 //================================================
