@@ -122,11 +122,12 @@ app.get('/legal', (req, res) => {
 //================================================
 app.get('/.well-known/ai-plugin.json', (req, res) => {
     let host = req.headers['host'];
+    let protocol = req.headers['x-forwarded-proto'] || 'http';
     fs.readFile('./.well-known/ai-plugin.json', 'utf8', (err, text) => {
         if (err) {
             return res.status(500).send({ message: err });
         }
-        text = text.replace(/PLUGIN_HOSTNAME/g, `http://${host}`);
+        text = text.replace(/PLUGIN_HOSTNAME/g, `${protocol}://${host}`);
         res.setHeader('Content-Type', 'application/json');
         res.send(text);
     });
@@ -137,11 +138,12 @@ app.get('/.well-known/ai-plugin.json', (req, res) => {
 //================================================
 app.get('/openapi.yaml', (req, res) => {
     let host = req.headers['host'];
+    let protocol = req.headers['x-forwarded-proto'] || 'http';
     fs.readFile('openapi.yaml', 'utf8', (err, text) => {
         if (err) {
             return res.status(500).send({ message: err });
         }
-        text = text.replace(/PLUGIN_HOSTNAME/g, `http://${host}`);
+        text = text.replace(/PLUGIN_HOSTNAME/g, `${protocol}://${host}`);
         res.setHeader('Content-Type', 'text/yaml');
         res.send(text);
     });
