@@ -126,7 +126,7 @@ app.get('/.well-known/ai-plugin.json', (req, res) => {
         if (err) {
             return res.status(500).send({ message: err });
         }
-        text = text.replace('PLUGIN_HOSTNAME', `http://${host}`);
+        text = text.replace(/PLUGIN_HOSTNAME/g, `http://${host}`);
         res.setHeader('Content-Type', 'application/json');
         res.send(text);
     });
@@ -141,7 +141,7 @@ app.get('/openapi.yaml', (req, res) => {
         if (err) {
             return res.status(500).send({ message: err });
         }
-        text = text.replace('PLUGIN_HOSTNAME', `http://${host}`);
+        text = text.replace(/PLUGIN_HOSTNAME/g, `http://${host}`);
         res.setHeader('Content-Type', 'text/yaml');
         res.send(text);
     });
@@ -150,6 +150,6 @@ app.get('/openapi.yaml', (req, res) => {
 //================================================
 // Start the server and listen on port 80
 //================================================
-app.listen(80, '0.0.0.0', () => {
-    console.log('Server is running on port 80');
+app.listen(3000, '0.0.0.0', () => {
+    console.log('Server is running on port 3000');
 });

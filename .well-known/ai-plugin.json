@@ -13,6 +13,6 @@
 		"is_user_authenticated": false
 	},
 	"logo_url": "PLUGIN_HOSTNAME/logo.png",
-	"contact_email": "legal@example.com",
-	"legal_info_url": "http://example.com/legal"
+	"contact_email": "Cyris@cyris.io",
+	"legal_info_url": "PLUGIN_HOSTNAME/legal"
 }
