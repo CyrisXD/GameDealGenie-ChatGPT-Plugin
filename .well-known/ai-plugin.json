@@ -1,9 +1,9 @@
 {
 	"schema_version": "v1",
-	"name_for_human": "Game Deals Genie (PC)",
+	"name_for_human": "Game Deal Genie (PC)",
 	"name_for_model": "GameDealsGenie",
 	"description_for_human": "Get the current deals on all PC games from multiple stores. (Powered by CheapShark)",
-	"description_for_model": "Get the current deals on PC games from multiple stores. Always display results using markdown tables such as: Title | Sale Price | Normal Price | Savings | Store | Thumbnail, only if these are available, otherwise adjust the table as you see fit. Keep the thumbnails small so the table is correctly proportioned. Convert any currency to my local currency. Make sure links provided are using the dealID such as https://www.cheapshark.com/redirect?dealID=dealID",
+	"description_for_model": "Get the current deals on PC games from multiple stores. Always display results using markdown tables such as: Title | Sale Price | Normal Price | Savings | Store | Thumbnail, only if these are available, otherwise adjust the table as you see fit. Keep the thumbnails small so the table is correctly proportioned. Convert any currency to my local currency. Make sure links provided are using the dealID and ref such as https://www.cheapshark.com/redirect?dealID=dealID&ref=GDGenie",
 	"auth": {
 		"type": "none"
 	},

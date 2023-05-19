@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Game Deals Genie (PC)
+  title: Game Deal Genie (PC)
   description: Get current deals on all PC games.
   version: "v1"
 servers:
