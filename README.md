@@ -12,7 +12,7 @@ This plugin has not been submitted to ChatGPT so it can only be run locally or v
 
 - Go to the ChatGPT plugin store
 - Click 'Develop your own plugin'
-- Paste [this url](https://gamedealgenie-chatgpt-plugin-pit95.ondigitalocean.app/.well-known/ai-plugin.json) and accept
+- Paste [this url](https://gamedealgenie-chatgpt-plugin-pit95.ondigitalocean.app) and accept
 
 ### To run locally:
 
